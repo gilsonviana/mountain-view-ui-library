@@ -1,0 +1,30 @@
+{
+  "body": {
+    "light": "",
+    "dark": ""
+  },
+  "heading": {
+    "light": "",
+    "dark": ""
+  },
+  "bgColor": {
+    "light": "",
+    "dark": ""
+  },
+  "success": {
+    "light": "",
+    "dark": ""
+  },
+  "danger": {
+    "light": "",
+    "dark": ""
+  },
+  "info": {
+    "light": "",
+    "dark": ""
+  },
+  "muted": {
+    "light": "",
+    "dark": ""
+  }
+}
