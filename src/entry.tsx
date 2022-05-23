@@ -7,7 +7,9 @@ export default function Entry() {
   return (
     <GestureHandlerRootView style={{ flex: 1 }}>
       <ThemeProvider>
-        <Paragraph>asdasdasd</Paragraph>
+        <Paragraph size="sm">small</Paragraph>
+        <Paragraph size="md">medium</Paragraph>
+        <Paragraph size="lg">large</Paragraph>
       </ThemeProvider>
     </GestureHandlerRootView>
   )

@@ -1,30 +1,52 @@
 {
-  "body": {
-    "light": "",
-    "dark": ""
+  "color": {
+    "body": {
+      "light": "#22223b",
+      "dark": "#22223b"
+    },
+    "heading": {
+      "light": "#22223b",
+      "dark": "#22223b"
+    },
+    "bgColor": {
+      "light": "#edf6f9",
+      "dark": "#edf6f9"
+    },
+    "success": {
+      "light": "#06d6a0",
+      "dark": "#06d6a0"
+    },
+    "danger": {
+      "light": "#e63946",
+      "dark": "#e63946"
+    },
+    "info": {
+      "light": "#118ab2",
+      "dark": "#118ab2"
+    },
+    "warning": {
+      "light": "#ffd166",
+      "dark": "#ffd166"
+    },
+    "muted": {
+      "light": "#8d99ae",
+      "dark": "#8d99ae"
+    }
   },
-  "heading": {
-    "light": "",
-    "dark": ""
-  },
-  "bgColor": {
-    "light": "",
-    "dark": ""
-  },
-  "success": {
-    "light": "",
-    "dark": ""
-  },
-  "danger": {
-    "light": "",
-    "dark": ""
-  },
-  "info": {
-    "light": "",
-    "dark": ""
-  },
-  "muted": {
-    "light": "",
-    "dark": ""
+  "config": {
+    "variables": {
+      "paragraph-sm": {
+        "fontSize": 14,
+        "lineHeight": 14
+      },
+      "paragraph-md": {
+        "fontSize": 17,
+        "lineHeight": 17
+      },
+      "paragraph-lg": {
+        "fontSize": 21,
+        "lineHeight": 21
+      }
+    }
   }
 }

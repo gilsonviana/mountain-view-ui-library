@@ -1,8 +1,13 @@
 import defaultTheme from './default.json';
 
-type ThemeSupport = { 
+type ThemeColorSupport = { 
   light: string
   dark: string
+}
+
+type ThemeVariableTypographyProps = {
+  fontSize: number
+  lineHeight: number
 }
 
 type ColorKeys = 
@@ -12,10 +17,19 @@ type ColorKeys =
   'success' | 
   'danger' | 
   'info' | 
+  'warning' |
   'muted'
 
+type VariableKeys =
+  'paragraph-sm' |
+  'paragraph-md' |
+  'paragraph-lg'
+
 export interface ITheme {
-  color: Record<ColorKeys, ThemeSupport>
+  color: Record<ColorKeys, ThemeColorSupport>
+  config: {
+    variables: Record<VariableKeys, ThemeVariableTypographyProps>
+  }
 }
 
-const themeColors: ITheme['color'] = defaultTheme;
+export const DefaultTheme = defaultTheme as ITheme
