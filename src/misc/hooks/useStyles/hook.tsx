@@ -1,25 +1,45 @@
-import { useCallback } from 'react';
-import { StyleSheet } from 'react-native';
+import { useMemo } from 'react';
+import { ColorSchemeName, StyleSheet } from 'react-native';
 
 import { useTheme } from '../useTheme';
-import { ITheme } from '@src/misc/theme';
+import type { ColorKeys, ITheme, ThemeVariableTypographyProps } from '@src/misc/theme';
 
-type StyleFunction = (
-  theme: ITheme,
+type StyleGetColorParams = {
+  color: ColorKeys
+}
+
+type StyleGetVariableParams = {
+  key: keyof ITheme['config']['variables']
+}
+
+type StyleFunctionParams = {
+  theme: ITheme
+  variant: ColorSchemeName
   sheet: typeof StyleSheet
-) => StyleSheet.NamedStyles<any>;
+  styles: StyleFunction
+  getColor: (params: StyleGetColorParams) => string
+  getVariable: (params: StyleGetVariableParams) => ThemeVariableTypographyProps
+}
 
-export const useStyles = (style: StyleFunction) => {
-  const { theme } = useTheme();
-  const styles = useCallback(
-    () => getStyles(theme, StyleSheet, style),
-    [style, theme]
+type StyleFunction = (params: StyleFunctionParams) => StyleSheet.NamedStyles<any>;
+
+export const useStyles = (styles: StyleFunction) => {
+  const { theme, variant } = useTheme();
+
+  const getVariable = ({ key }: StyleGetVariableParams) => {
+    return theme.config.variables[key]
+  }
+
+  const getColor = ({ color = 'body' }: StyleGetColorParams) => {
+    return theme.color[color][variant!];
+  }
+
+  const hook = useMemo(
+    () => getStyles({ theme, variant, sheet: StyleSheet, styles, getColor, getVariable }),
+    [styles, theme]
   );
-  return styles();
+
+  return hook;
 };
 
-const getStyles = (
-  theme: ITheme,
-  sheet: typeof StyleSheet,
-  styles: StyleFunction
-) => StyleSheet.create(styles(theme, sheet));
+const getStyles = (params: StyleFunctionParams) => StyleSheet.create(params.styles(params));

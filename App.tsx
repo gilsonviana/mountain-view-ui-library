@@ -12,13 +12,20 @@ import {
 } from 'react-native';
 
 import Entry from '@src/entry';
+import { ThemeProvider } from '@src/misc/hooks/useTheme';
+import { GestureHandlerRootView } from 'react-native-gesture-handler';
+import { ParagraphDemo } from '@src/components/Paragraph/demo';
 
 const App = () => {
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <Entry />
-    </SafeAreaView>
+    <GestureHandlerRootView style={{ flex: 1 }}>
+      <ThemeProvider>
+        <SafeAreaView style={{ flex: 1 }}>
+          <Entry />
+        </SafeAreaView>
+      </ThemeProvider>
+    </GestureHandlerRootView>
   );
 };
 

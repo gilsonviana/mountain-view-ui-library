@@ -37,15 +37,15 @@
     "variables": {
       "paragraph-sm": {
         "fontSize": 14,
-        "lineHeight": 14
+        "lineHeight": 17
       },
       "paragraph-md": {
         "fontSize": 17,
-        "lineHeight": 17
+        "lineHeight": 21
       },
       "paragraph-lg": {
         "fontSize": 21,
-        "lineHeight": 21
+        "lineHeight": 24
       }
     }
   }

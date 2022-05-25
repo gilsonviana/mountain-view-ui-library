@@ -5,12 +5,9 @@ type ThemeColorSupport = {
   dark: string
 }
 
-type ThemeVariableTypographyProps = {
-  fontSize: number
-  lineHeight: number
-}
+export type ThemeVariableTypographyProps = any
 
-type ColorKeys = 
+export type ColorKeys = 
   'body' | 
   'heading' | 
   'bgColor' | 
