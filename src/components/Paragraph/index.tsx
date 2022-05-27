@@ -17,8 +17,7 @@ export const Paragraph = ({ children, size = 'md', color = 'body', style, ...res
   const s = useStyles(({ getColor, getVariable }) => ({
     paragraph: {
       color: getColor({ color }),
-      // @ts-expect-error {key} does not accept a string
-      ...getVariable({ key: 'paragraph-' + size }),
+      ...getVariable({ key: `paragraph.${size}` }),
     }
   }))
 

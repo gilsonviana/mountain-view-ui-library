@@ -1,5 +1,5 @@
 
-import type { ColorKeys, ITheme, ThemeVariableTypographyProps } from "@src/misc/theme/types"
+import type { ColorKeys, ITheme } from "@src/misc/theme/types"
 import type { ColorSchemeName, StyleSheet } from "react-native"
 
 export type StyleGetColorParams = {
@@ -7,7 +7,7 @@ export type StyleGetColorParams = {
 }
 
 export type StyleGetVariableParams = {
-  key: keyof ITheme['config']['variables']
+  key: string
 }
 
 export type StyleFunctionParams = {
@@ -16,7 +16,7 @@ export type StyleFunctionParams = {
   sheet: typeof StyleSheet
   styles: StyleFunction
   getColor: (params: StyleGetColorParams) => string
-  getVariable: (params: StyleGetVariableParams) => ThemeVariableTypographyProps
+  getVariable: (params: StyleGetVariableParams) => {}
 }
 
 export type StyleFunction = (params: StyleFunctionParams) => StyleSheet.NamedStyles<any>;

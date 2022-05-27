@@ -1,3 +1,4 @@
+import { getSplittedKey } from '@src/misc/utils';
 import { useMemo } from 'react';
 import { StyleSheet } from 'react-native';
 
@@ -8,7 +9,7 @@ export const useStyles = (styles: StyleFunction) => {
   const { theme, variant } = useTheme();
 
   const getVariable = ({ key }: StyleGetVariableParams) => {
-    return theme.config.variables[key]
+    return getSplittedKey(key, theme.config.variables)
   }
 
   const getColor = ({ color = 'body' }: StyleGetColorParams) => {

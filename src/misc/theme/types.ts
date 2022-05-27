@@ -3,8 +3,6 @@ type ThemeColorSupport = {
   dark: string
 }
 
-export type ThemeVariableTypographyProps = any
-
 export type ColorKeys = 
   'body' | 
   'heading' | 
@@ -15,14 +13,9 @@ export type ColorKeys =
   'warning' |
   'muted'
 
-type VariableKeys =
-  'paragraph-sm' |
-  'paragraph-md' |
-  'paragraph-lg'
-
 export interface ITheme {
   color: Record<ColorKeys, ThemeColorSupport>
   config: {
-    variables: Record<VariableKeys, ThemeVariableTypographyProps>
+    variables: Record<string, {}>
   }
 }

@@ -35,17 +35,19 @@
   },
   "config": {
     "variables": {
-      "paragraph-sm": {
-        "fontSize": 14,
-        "lineHeight": 17
-      },
-      "paragraph-md": {
-        "fontSize": 17,
-        "lineHeight": 21
-      },
-      "paragraph-lg": {
-        "fontSize": 21,
-        "lineHeight": 24
+      "paragraph": {
+        "sm": {
+          "fontSize": 14,
+          "lineHeight": 17
+        },
+        "md": {
+          "fontSize": 17,
+          "lineHeight": 21
+        },
+        "lg": {
+          "fontSize": 21,
+          "lineHeight": 24
+        }
       }
     }
   }
