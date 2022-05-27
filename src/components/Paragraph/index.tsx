@@ -1,7 +1,8 @@
-import { useStyles } from '@src/misc/hooks/useStyles/hook';
-import type { ColorKeys } from '@src/misc/theme';
 import React from 'react';
 import { Text, TextProps } from "react-native"
+
+import { useStyles } from '@src/misc/hooks/useStyles/hook';
+import type { ColorKeys } from '@src/misc/theme/types';
 
 type SizeVariations = 'sm' | 'md' | 'lg'
 

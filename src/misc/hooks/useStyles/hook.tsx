@@ -1,27 +1,8 @@
 import { useMemo } from 'react';
-import { ColorSchemeName, StyleSheet } from 'react-native';
+import { StyleSheet } from 'react-native';
 
-import { useTheme } from '../useTheme';
-import type { ColorKeys, ITheme, ThemeVariableTypographyProps } from '@src/misc/theme';
-
-type StyleGetColorParams = {
-  color: ColorKeys
-}
-
-type StyleGetVariableParams = {
-  key: keyof ITheme['config']['variables']
-}
-
-type StyleFunctionParams = {
-  theme: ITheme
-  variant: ColorSchemeName
-  sheet: typeof StyleSheet
-  styles: StyleFunction
-  getColor: (params: StyleGetColorParams) => string
-  getVariable: (params: StyleGetVariableParams) => ThemeVariableTypographyProps
-}
-
-type StyleFunction = (params: StyleFunctionParams) => StyleSheet.NamedStyles<any>;
+import { useTheme } from '../useTheme/hook';
+import type { StyleFunction, StyleFunctionParams, StyleGetColorParams, StyleGetVariableParams } from './types';
 
 export const useStyles = (styles: StyleFunction) => {
   const { theme, variant } = useTheme();

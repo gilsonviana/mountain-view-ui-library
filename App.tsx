@@ -12,9 +12,8 @@ import {
 } from 'react-native';
 
 import Entry from '@src/entry';
-import { ThemeProvider } from '@src/misc/hooks/useTheme';
 import { GestureHandlerRootView } from 'react-native-gesture-handler';
-import { ParagraphDemo } from '@src/components/Paragraph/demo';
+import { ThemeProvider } from '@src/misc/hooks/useTheme/provider';
 
 const App = () => {
 

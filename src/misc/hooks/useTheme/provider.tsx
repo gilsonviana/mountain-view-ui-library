@@ -1,14 +1,9 @@
 import React, { createContext, useState  } from 'react';
-import { useColorScheme, ColorSchemeName } from 'react-native';
+import { useColorScheme } from 'react-native';
 
 import { WithChildren } from '@src/misc/generic-types';
 import { DefaultTheme, ITheme } from '@src/misc/theme';
-
-interface IThemeContext {
-  theme: ITheme
-  setDefaultTheme: (theme: ITheme) => void
-  variant: ColorSchemeName
-}
+import type { IThemeContext } from './types';
 
 interface Props extends WithChildren {
   defaultTheme?: ITheme
